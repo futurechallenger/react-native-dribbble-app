@@ -81,7 +81,7 @@ export default class DribbbleApp extends React.Component {
         navigationBar={
           <Navigator.NavigationBar
             routeMapper={NavigationBarRouteMapper}
-            style={{backgroundColor: 'white', opacity: 0.8}} />
+            style={[styles.navBar, {backgroundColor: 'white', opacity: 0.8}]} />
         }
       />
     );
@@ -117,29 +117,7 @@ export default class DribbbleApp extends React.Component {
           onPress={() => {
             this.setState({selectedTab: 'all'});
           }}>
-          {/* {this._renderContent("all", "All")} */}
-          <Navigator
-            style={styles.wrapper}
-            initialRoute={{
-              title: 'All',
-        			component: DemoList,
-        			index: 0,
-        			passProps: {
-                filter: 'default'
-        			}
-            }}
-            renderScene={(route, navigator) => {
-              if (route.component) {
-            		return React.createElement(route.component
-            			, {...this.props, ...route.passProps, navigator, route});
-            	}
-            }}
-            navigationBar={
-              <Navigator.NavigationBar
-                routeMapper={NavigationBarRouteMapper}
-                style={{backgroundColor: 'white', opacity: 0.8}} />
-            }
-          />
+          {this._renderContent("all", "All")}
         </Tabs.Item>
         <Tabs.Item
           icon={require('./img/trophy.png')}
@@ -148,29 +126,7 @@ export default class DribbbleApp extends React.Component {
           onPress={() => {
             this.setState({selectedTab: 'debuts'});
           }}>
-          {/* {this._renderContent("debuts", "Debuts")} */}
-          <Navigator
-            style={styles.wrapper}
-            initialRoute={{
-              title: 'Debuts',
-        			component: DemoList,
-        			index: 0,
-        			passProps: {
-                filter: 'debuts'
-        			}
-            }}
-            renderScene={(route, navigator) => {
-              if (route.component) {
-            		return React.createElement(route.component
-            			, {...this.props, ...route.passProps, navigator, route});
-            	}
-            }}
-            navigationBar={
-              <Navigator.NavigationBar
-                routeMapper={NavigationBarRouteMapper}
-                style={{backgroundColor: 'white', opacity: 0.8}} />
-            }
-          />
+          {this._renderContent("debuts", "Debuts")}
         </Tabs.Item>
         <Tabs.Item
           icon={require('./img/heart.png')}
@@ -179,29 +135,7 @@ export default class DribbbleApp extends React.Component {
           onPress={() => {
             this.setState({selectedTab: 'animated'});
           }}>
-          {/* {this._renderContent("animated", "Animated")} */}
-          <Navigator
-            style={styles.wrapper}
-            initialRoute={{
-              title: 'Animated',
-        			component: DemoList,
-        			index: 0,
-        			passProps: {
-                filter: 'animated'
-        			}
-            }}
-            renderScene={(route, navigator) => {
-              if (route.component) {
-            		return React.createElement(route.component
-            			, {...this.props, ...route.passProps, navigator, route});
-            	}
-            }}
-            navigationBar={
-              <Navigator.NavigationBar
-                routeMapper={NavigationBarRouteMapper}
-                style={{backgroundColor: 'white', opacity: 0.8}} />
-            }
-          />
+          {this._renderContent("animated", "Animated")}
         </Tabs.Item>
         <Tabs.Item
           icon={require('./img/light.png')}
@@ -210,29 +144,7 @@ export default class DribbbleApp extends React.Component {
           onPress={() => {
             this.setState({selectedTab: 'rebounds'});
           }}>
-          {/* {this._renderContent("rebounds", "Rebounds")} */}
-          <Navigator
-            style={styles.wrapper}
-            initialRoute={{
-              title: 'Rebounds',
-        			component: DemoList,
-        			index: 0,
-        			passProps: {
-                filter: 'rebounds'
-        			}
-            }}
-            renderScene={(route, navigator) => {
-              if (route.component) {
-            		return React.createElement(route.component
-            			, {...this.props, ...route.passProps, navigator, route});
-            	}
-            }}
-            navigationBar={
-              <Navigator.NavigationBar
-                routeMapper={NavigationBarRouteMapper}
-                style={{backgroundColor: 'white', opacity: 0.8}} />
-            }
-          />
+          {this._renderContent("rebounds", "Rebounds")}
         </Tabs.Item>
       </Tabs>
     );
@@ -355,7 +267,7 @@ var styles = StyleSheet.create({
   },
 
   navBar: {
-    borderBottomColor: '#48209A',
+    borderBottomColor: '#d3d3d3',
     borderBottomWidth: 1
   }
 });

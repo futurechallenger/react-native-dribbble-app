@@ -41,11 +41,8 @@ android/app/libs
 android/keystores/debug.keystore
 
 # VSCode
-.vscode
-tsconfig.json
+.vscode/
 
-# tutorial stuff
+# tutorial
 app/tutorial/
-
-# test code
 test.js
