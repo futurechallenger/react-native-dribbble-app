@@ -103,7 +103,9 @@ export default class Player extends Component {
         <View style={styles.shotList}>
           {this.state.dataSource.length !== 0 ? this.renderShots() : <Loading />}
         </View>
-        <Modal visible={this.state.isModalOpen}
+        <Modal
+          onReqeustClose={()=>{console.log('request close')}}
+          visible={this.state.isModalOpen}
           onDismiss={this.closeModal}>
           <Image source={getImage.authorAvatar(this.props.player) }
             style={styles.playerImageModal}/>

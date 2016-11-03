@@ -28,6 +28,14 @@ project.xcworkspace
 .idea
 .gradle
 local.properties
+*.keystore
+*.jks
+*.apk
+android/*.keystore
+android/*.jks
+android/app/*.apk
+android/app/*.keystore
+android/app/*.jks
 
 # node.js
 #

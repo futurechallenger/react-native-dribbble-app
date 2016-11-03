@@ -17,7 +17,6 @@ import {
 } from 'react-native';
 
 import ShotList from "./app/ShotList";
-import Icon from "react-native-vector-icons/FontAwesome";
 
 import Tabs from './app/lib/TabCore';
 import DemoList from './app/test/demoList';

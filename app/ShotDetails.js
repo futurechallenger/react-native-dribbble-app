@@ -16,7 +16,7 @@ import {
   Modal
 } from 'react-native';
 
-import Icon from "react-native-vector-icons/FontAwesome";
+// import Icon from "react-native-vector-icons/FontAwesome";
 import * as getImage from "./helpers/getImage";
 import HTML from "react-native-htmlview";
 import ParallaxView from "react-native-parallax-view";
@@ -98,17 +98,19 @@ export default class ShotDetails extends React.Component {
             </View>
           </TouchableHighlight>
           <View style={styles.mainSection}>
-            <View style={styles.shotDetailsRow}>
-              <View style={styles.shotCounter}>
-                <Icon name="heart-o" size={24} color="#333"/>
+            <View style={[styles.shotDetailsRow, {backgroundColor: 'yellow'}]}>
+              <View style={[styles.shotCounter, {backgroundColor: 'red'}]}>
+                <Image
+                  srouce={require('../img/heart-o.png')}
+                  style={{flex: 1, width: 24, height:24, tintColor: '#333', backgroundColor:'red'}} />
                 <Text style={styles.shotCounterText}> {this.props.shot.likes_count} </Text>
               </View>
-              <View style={styles.shotCounter}>
-                <Icon name="comments-o" size={24} color="#333"/>
+              <View style={[styles.shotCounter, {backgroundColor: 'red'}]}>
+                <Image srouce={require('../img/comments-o.png')} style={{tintColor: '#333', backgroundColor:'red'}} />
                 <Text style={styles.shotCounterText}> {this.props.shot.comments_count} </Text>
               </View>
-              <View style={styles.shotCounter}>
-                <Icon name="eye" size={24} color="#333"/>
+              <View style={[styles.shotCounter, {backgroundColor: 'red'}]}>
+                <Image srouce={require('../img/eye.png')} style={{tintColor: '#333', backgroundColor:'red'}} />
                 <Text style={styles.shotCounterText}> {this.props.shot.views_count} </Text>
               </View>
             </View>
@@ -126,8 +128,13 @@ export default class ShotDetails extends React.Component {
             </View>
           </View>
         </View>
-        <Modal visible={this.state.isModalOpen}
-          onDismiss={this.closeModal}>
+        <Image
+          srouce={require('../img/heart-o.png')}
+          style={{flex: 1, width: 24, height:24, tintColor: '#333', backgroundColor:'red'}} />
+        <Modal
+          visible={this.state.isModalOpen}
+          onDismiss={this.closeModal}
+          onRequestClose={()=>{console.log('request close')}}>
           <Image source={getImage.shotImage(this.props.shot)}
                  style={styles.customModalImage}
                  resizeMode="contain"/>

@@ -70,7 +70,7 @@ export default class TabItem extends React.Component {
           <Image
             style={[tintStyle, styles.icon]}
             source={source}
-            resizeMode={Image.resizeMode.stretch}
+            resizeMode='contain'
           />
           <Text style={[styles.text, {color: this.props.tintColor}]}>
             {this.props.title}
@@ -83,7 +83,7 @@ export default class TabItem extends React.Component {
         <View style={{alignItems: 'center', justifyContent: 'center', padding: 5}}>
           <Image source={source}
             style={[tintStyle, styles.icon]}
-            resizeMode={Image.resizeMode.stretch} />
+            resizeMode='contain' />
           <Text style={[styles.text, {color: this.props.defaultTintColor}]}>
             {this.props.title}
           </Text>
