@@ -23,6 +23,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import Tabs from './lib/TabCore';
 import DemoList from './test/demoList';
+import TabView from './tabs/DribbbleTabsView';
 
 const THEME_COLOR = '#ea4c89';
 
@@ -95,140 +96,146 @@ class DribbbleApp extends React.Component {
     );
   }
 
+  // render() {
+  //   return (
+  //     <Tabs
+  //       navigatorType='universal'
+  //       tintColor={THEME_COLOR}
+  //       selected={this.state.selectedTab}
+  //       style={{backgroundColor: 'white'}}
+  //       pressOpacity={1}>
+
+  //       <Tabs.Item
+  //         icon={require('../img/dribbble.png')}
+  //         title='All'
+  //         selected={this.state.selectedTab === 'all'}
+  //         onPress={() => {
+  //           this.setState({selectedTab: 'all'});
+  //         }}>
+  //         {/* {this._renderContent("all", "All")} */}
+  //         <Navigator
+  //           style={styles.wrapper}
+  //           initialRoute={{
+  //             title: 'All',
+  //       			component: DemoList,
+  //       			index: 0,
+  //       			passProps: {
+  //               filter: 'default'
+  //       			}
+  //           }}
+  //           renderScene={(route, navigator) => {
+  //             if (route.component) {
+  //           		return React.createElement(route.component
+  //           			, {...this.props, ...route.passProps, navigator, route});
+  //           	}
+  //           }}
+  //           navigationBar={
+  //             <Navigator.NavigationBar
+  //               routeMapper={NavigationBarRouteMapper}
+  //               style={{backgroundColor: 'white', opacity: 0.8}} />
+  //           }
+  //         />
+  //       </Tabs.Item>
+  //       <Tabs.Item
+  //         icon={require('../img/trophy.png')}
+  //         title='Debuts'
+  //         selected={this.state.selectedTab === 'debuts'}
+  //         onPress={() => {
+  //           this.setState({selectedTab: 'debuts'});
+  //         }}>
+  //         {/* {this._renderContent("debuts", "Debuts")} */}
+  //         <Navigator
+  //           style={styles.wrapper}
+  //           initialRoute={{
+  //             title: 'Debuts',
+  //       			component: DemoList,
+  //       			index: 0,
+  //       			passProps: {
+  //               filter: 'debuts'
+  //       			}
+  //           }}
+  //           renderScene={(route, navigator) => {
+  //             if (route.component) {
+  //           		return React.createElement(route.component
+  //           			, {...this.props, ...route.passProps, navigator, route});
+  //           	}
+  //           }}
+  //           navigationBar={
+  //             <Navigator.NavigationBar
+  //               routeMapper={NavigationBarRouteMapper}
+  //               style={{backgroundColor: 'white', opacity: 0.8}} />
+  //           }
+  //         />
+  //       </Tabs.Item>
+  //       <Tabs.Item
+  //         icon={require('../img/heart.png')}
+  //         title='Animated'
+  //         selected={this.state.selectedTab === 'animated'}
+  //         onPress={() => {
+  //           this.setState({selectedTab: 'animated'});
+  //         }}>
+  //         {/* {this._renderContent("animated", "Animated")} */}
+  //         <Navigator
+  //           style={styles.wrapper}
+  //           initialRoute={{
+  //             title: 'Animated',
+  //       			component: DemoList,
+  //       			index: 0,
+  //       			passProps: {
+  //               filter: 'animated'
+  //       			}
+  //           }}
+  //           renderScene={(route, navigator) => {
+  //             if (route.component) {
+  //           		return React.createElement(route.component
+  //           			, {...this.props, ...route.passProps, navigator, route});
+  //           	}
+  //           }}
+  //           navigationBar={
+  //             <Navigator.NavigationBar
+  //               routeMapper={NavigationBarRouteMapper}
+  //               style={{backgroundColor: 'white', opacity: 0.8}} />
+  //           }
+  //         />
+  //       </Tabs.Item>
+  //       <Tabs.Item
+  //         icon={require('../img/light.png')}
+  //         title='Rebounds'
+  //         selected={this.state.selectedTab === 'rebounds'}
+  //         onPress={() => {
+  //           this.setState({selectedTab: 'rebounds'});
+  //         }}>
+  //         {/* {this._renderContent("rebounds", "Rebounds")} */}
+  //         <Navigator
+  //           style={styles.wrapper}
+  //           initialRoute={{
+  //             title: 'Rebounds',
+  //       			component: DemoList,
+  //       			index: 0,
+  //       			passProps: {
+  //               filter: 'rebounds'
+  //       			}
+  //           }}
+  //           renderScene={(route, navigator) => {
+  //             if (route.component) {
+  //           		return React.createElement(route.component
+  //           			, {...this.props, ...route.passProps, navigator, route});
+  //           	}
+  //           }}
+  //           navigationBar={
+  //             <Navigator.NavigationBar
+  //               routeMapper={NavigationBarRouteMapper}
+  //               style={{backgroundColor: 'white', opacity: 0.8}} />
+  //           }
+  //         />
+  //       </Tabs.Item>
+  //     </Tabs>
+  //   );
+  // }
+
   render() {
     return (
-      <Tabs
-        navigatorType='universal'
-        tintColor={THEME_COLOR}
-        selected={this.state.selectedTab}
-        style={{backgroundColor: 'white'}}
-        pressOpacity={1}>
-
-        <Tabs.Item
-          icon={require('../img/dribbble.png')}
-          title='All'
-          selected={this.state.selectedTab === 'all'}
-          onPress={() => {
-            this.setState({selectedTab: 'all'});
-          }}>
-          {/* {this._renderContent("all", "All")} */}
-          <Navigator
-            style={styles.wrapper}
-            initialRoute={{
-              title: 'All',
-        			component: DemoList,
-        			index: 0,
-        			passProps: {
-                filter: 'default'
-        			}
-            }}
-            renderScene={(route, navigator) => {
-              if (route.component) {
-            		return React.createElement(route.component
-            			, {...this.props, ...route.passProps, navigator, route});
-            	}
-            }}
-            navigationBar={
-              <Navigator.NavigationBar
-                routeMapper={NavigationBarRouteMapper}
-                style={{backgroundColor: 'white', opacity: 0.8}} />
-            }
-          />
-        </Tabs.Item>
-        <Tabs.Item
-          icon={require('../img/trophy.png')}
-          title='Debuts'
-          selected={this.state.selectedTab === 'debuts'}
-          onPress={() => {
-            this.setState({selectedTab: 'debuts'});
-          }}>
-          {/* {this._renderContent("debuts", "Debuts")} */}
-          <Navigator
-            style={styles.wrapper}
-            initialRoute={{
-              title: 'Debuts',
-        			component: DemoList,
-        			index: 0,
-        			passProps: {
-                filter: 'debuts'
-        			}
-            }}
-            renderScene={(route, navigator) => {
-              if (route.component) {
-            		return React.createElement(route.component
-            			, {...this.props, ...route.passProps, navigator, route});
-            	}
-            }}
-            navigationBar={
-              <Navigator.NavigationBar
-                routeMapper={NavigationBarRouteMapper}
-                style={{backgroundColor: 'white', opacity: 0.8}} />
-            }
-          />
-        </Tabs.Item>
-        <Tabs.Item
-          icon={require('../img/heart.png')}
-          title='Animated'
-          selected={this.state.selectedTab === 'animated'}
-          onPress={() => {
-            this.setState({selectedTab: 'animated'});
-          }}>
-          {/* {this._renderContent("animated", "Animated")} */}
-          <Navigator
-            style={styles.wrapper}
-            initialRoute={{
-              title: 'Animated',
-        			component: DemoList,
-        			index: 0,
-        			passProps: {
-                filter: 'animated'
-        			}
-            }}
-            renderScene={(route, navigator) => {
-              if (route.component) {
-            		return React.createElement(route.component
-            			, {...this.props, ...route.passProps, navigator, route});
-            	}
-            }}
-            navigationBar={
-              <Navigator.NavigationBar
-                routeMapper={NavigationBarRouteMapper}
-                style={{backgroundColor: 'white', opacity: 0.8}} />
-            }
-          />
-        </Tabs.Item>
-        <Tabs.Item
-          icon={require('../img/light.png')}
-          title='Rebounds'
-          selected={this.state.selectedTab === 'rebounds'}
-          onPress={() => {
-            this.setState({selectedTab: 'rebounds'});
-          }}>
-          {/* {this._renderContent("rebounds", "Rebounds")} */}
-          <Navigator
-            style={styles.wrapper}
-            initialRoute={{
-              title: 'Rebounds',
-        			component: DemoList,
-        			index: 0,
-        			passProps: {
-                filter: 'rebounds'
-        			}
-            }}
-            renderScene={(route, navigator) => {
-              if (route.component) {
-            		return React.createElement(route.component
-            			, {...this.props, ...route.passProps, navigator, route});
-            	}
-            }}
-            navigationBar={
-              <Navigator.NavigationBar
-                routeMapper={NavigationBarRouteMapper}
-                style={{backgroundColor: 'white', opacity: 0.8}} />
-            }
-          />
-        </Tabs.Item>
-      </Tabs>
+      <TabView />
     );
   }
 };
